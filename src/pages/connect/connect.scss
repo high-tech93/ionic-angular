@@ -1,0 +1,32 @@
+page-connect {
+    ion-content {
+        background-color: #3A393B !important;
+    }
+
+    h1 {
+        color: #DFDCE3;
+    }
+
+    .text {
+        color: #DFDCE3;
+        font-family: font-regular;
+        font-size: 14px;
+        margin-top: 2vh;
+        
+    }
+
+    .border {
+        border-radius: 10px 10px 10px 10px;
+        box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.75);
+    }
+
+    .loading {
+        width: 50px;
+        margin: 20px 40% 0 43%;
+    }
+
+    .branch {
+        font-family: font-book;
+    }
+
+}

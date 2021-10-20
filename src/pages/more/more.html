@@ -1,0 +1,108 @@
+<!--
+  Generated template for the MorePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="navColor">
+    <ion-title>More</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-slides pager effect="coverflow">
+        
+    <ion-slide (tap)="confernece($event)">
+      <div *ngFor="let subitem of more.conferences; let i = index" class="container">
+        <div *ngIf="i < 1">
+          <img [src]="subitem.photo" (load)="subitem.loaded = true" [hidden]="!subitem.loaded" width="100%"/>
+          <!-- <img src="assets/img/thumbnail.png"/> -->
+          <img src="assets/img/loading.gif" [hidden]="subitem.loaded" class="loading">
+          <div class="titles">Conferences</div>    
+        </div>  
+      </div>
+    </ion-slide>
+        
+    <ion-slide *ngFor="let subitem of more.branches" (tap)="branches($event, subitem)">
+      <div class="container">
+        <img [src]="subitem.image" (load)="subitem.loaded = true" [hidden]="!subitem.loaded" width="100%"/>
+        <img src="assets/img/loading.gif" [hidden]="subitem.loaded" class="loading">
+          
+        <div class="titles">{{subitem.title}}</div>
+                  
+      </div>
+    </ion-slide>
+
+    <ion-slide *ngFor="let subitem of more.leaders" (tap)="leaders($event, subitem)">
+      <div class="container">
+        <img [src]="subitem.image" (load)="subitem.loaded = true" [hidden]="!subitem.loaded" width="100%"/>
+        <img src="assets/img/loading.gif" [hidden]="subitem.loaded" class="loading">
+            
+        <div class="titles">{{subitem.title}}</div>
+                    
+      </div>
+    </ion-slide>
+
+    <ion-slide *ngFor="let subitem of more.ministries" (tap)="ministries($event, subitem)">
+      <div class="container">
+        <img [src]="subitem.image" (load)="subitem.loaded = true" [hidden]="!subitem.loaded" width="100%"/>
+        <img src="assets/img/loading.gif" [hidden]="subitem.loaded" class="loading">
+              
+        <div class="titles">{{subitem.title}}</div>
+                      
+      </div>
+    </ion-slide>
+      
+    <ion-slide (tap)="connect($event)">
+      <div *ngFor="let subitem of more.connect; let i = index" class="container">
+        <div *ngIf="i < 1">
+          <img [src]="subitem.image" (load)="subitem.loaded = true" [hidden]="!subitem.loaded" width="100%" height="100%"/>
+          <img src="assets/img/loading.gif" [hidden]="subitem.loaded" class="loading">
+                
+          <div class="titles">{{subitem.title}}</div>
+        </div>
+                      
+      </div>
+    </ion-slide>
+  
+    <ion-slide *ngFor="let subitem of more.giving" (tap)="giving($event, subitem)">
+      <div class="container">
+        <img [src]="subitem.image" (load)="subitem.loaded = true" [hidden]="!subitem.loaded" width="100%" height="100%"/>
+        <img src="assets/img/loading.gif" [hidden]="subitem.loaded" class="loading">
+                
+        <div class="titles">{{subitem.title}}</div>
+                        
+      </div>
+    </ion-slide>
+
+    <ion-slide  (tap)="bible($event)">
+      <div *ngFor="let subitem of more.bible; let i = index" class="container">
+        <div *ngIf="i < 1">
+          <img [src]="subitem.image" (load)="subitem.loaded = true" [hidden]="!subitem.loaded" width="100%" height="100%"/>
+          <img src="assets/img/loading.gif" [hidden]="subitem.loaded" class="loading">
+                  
+          <div class="titles">Bible</div>
+        </div>
+                        
+      </div>
+    </ion-slide>
+
+    <ion-slide *ngFor="let subitem of more.social" (tap)="social($event, subitem)">
+      <div class="container">
+        <img [src]="subitem.image" (load)="subitem.loaded = true" [hidden]="!subitem.loaded" width="100%"/>
+        <img src="assets/img/loading.gif" [hidden]="subitem.loaded" class="loading">
+                
+        <div class="titles">{{subitem.title}}</div>
+                        
+      </div>
+    </ion-slide>
+
+  </ion-slides>
+
+</ion-content>
+

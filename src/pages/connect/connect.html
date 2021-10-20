@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar color="navColor">
+    <ion-title>Connect With Us</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card class="border" *ngFor="let subitems of connect">
+        
+    <img [src]="subitems.photo" (load)="subitems.loaded = true" [hidden]="!subitems.loaded" width="100%"/>
+    <img src="assets/img/loading.gif" [hidden]="subitems.loaded" class="loading">
+    
+    <ion-card-content>
+          
+      <ion-card-title>
+        {{subitems.heading}}
+      </ion-card-title>
+      <ion-row>
+        <ion-col class="branch">
+          {{subitems.description}}
+        </ion-col>
+      </ion-row>
+        
+    </ion-card-content>
+      
+  </ion-card>
+
+</ion-content>

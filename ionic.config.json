@@ -1,0 +1,7 @@
+{
+  "name": "CarryYourCrossMinistries",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

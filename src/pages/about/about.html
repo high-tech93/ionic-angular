@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar color="navColor">
+    <ion-title>
+      About Us
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let item of about">
+    <img [src]="item.photo" (load)="item.loaded = true" [hidden]="!item.loaded" width="100%" height="100%"/>
+    <img src="assets/img/loading.gif" [hidden]="item.loaded" class="loading">
+  
+    <div padding>
+    
+      <h1>{{item.heading}}</h1>
+        
+      <p class="text" [innerHTML]="item.description"></p>
+    
+    </div>
+  </div>  
+</ion-content>

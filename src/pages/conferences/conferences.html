@@ -1,0 +1,42 @@
+<!--
+  Generated template for the ConferencesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="navColor">
+    <ion-title>Conferences</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let subitems of conferences" class="border" (tap)="series($event, subitems)">
+    
+    <img [src]="subitems.photo" (load)="subitems.loaded = true" [hidden]="!subitems.loaded" width="100%"/>
+    <img src="assets/img/loading.gif" [hidden]="subitems.loaded" class="loading">
+
+    <ion-card-content>
+      
+      <ion-card-title>
+        {{subitems.title}}
+      </ion-card-title>
+      
+      <ion-row>
+        <ion-col class="date">
+          {{subitems.duration}}
+        </ion-col>
+        <ion-col col-1>
+          <ion-icon name={{subitems.icon1}}></ion-icon>
+        </ion-col>
+        <ion-col col-1>
+          <ion-icon name={{subitems.icon2}}></ion-icon>
+        </ion-col>
+      </ion-row>
+    
+    </ion-card-content>
+  
+  </ion-card>
+
+</ion-content>
